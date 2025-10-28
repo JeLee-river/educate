@@ -6,7 +6,8 @@
 
 React DevTools Profiler로 측정한 결과, **스와이프 이벤트가 발생할 때마다 컴포넌트가 리렌더링**되고 있었다. 스와이핑 되는 매 프레임마다 상태 업데이트가 발생했고, 이는 불필요한 렌더링을 유발하였다.
 
-[개선 전 이미지]
+<img width="912" height="636" alt="image" src="https://github.com/user-attachments/assets/e0f4c150-16eb-4960-9763-06a270873651" />
+
 
 <br>
 
@@ -30,7 +31,8 @@ const swipeMove = (clientX: number) => {
 
 이 코드의 핵심 문제는 **스와이프 오프셋을 React 상태로 관리**했다는 점이다. 사용자가 스와이프할 때마다 `setSwipeOffset`이 호출되었고 상태가 변경되어 리렌더링을 유발했다.
 
-[영상 1]
+https://github.com/user-attachments/assets/01e3b8a4-84ab-4348-86fa-e6dd1b3e0161
+
 
 <br>
 
@@ -67,6 +69,9 @@ const updateTransform = useCallback(() => {
   }% + ${offset}px))`;
 }, [slideIndex]);
 ```
+
+<img width="911" height="531" alt="image" src="https://github.com/user-attachments/assets/a02fa6fa-89f1-4b88-a36c-8a08e897baf3" />
+
 
 <br>
 
